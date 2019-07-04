@@ -53,9 +53,15 @@ header{
 }
 .match-card {
     background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("../images/scott.jpg");
+    /* background-repeat: no-repeat; */
+    /* background-image: url("../images/scott.jpg"); */
     background-position: center;
+}
+.bill {
+    background-image: url(../images/bill.jpg);
+}
+.scott{
+    background-image: url(../images/scott.jpg);
 }
 .stats{
     font-size: 2rem;
