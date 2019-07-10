@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Barriecito&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="assets/js/script.js"></script>
@@ -9,17 +10,17 @@
        <header class="title">LFZ Space Catz</header> 
        
        <aside class="stats">Stats
-          <div class="aside-divs">Games Played</div>
-          <div class="aside-divs">0</div>
+          <div class="aside-divs ">Games Played</div>
+          <div class="aside-divs" id="games-played-display">0</div>
           <div class="aside-divs">Attempts</div>
-          <div class="aside-divs">0</div>
+          <div class="aside-divs" id="attempts-display">0</div>
           <div class="aside-divs">Accuracy</div>
-          <div class="aside-divs">0%</div>
+          <div class="aside-divs" id="accuracy-display">0%</div>
        </aside>
        
        <main>
             <container class="game-area">
-                <div class="card-container">
+                <!-- <div class="card-container">
                     <div class="lfz-card"></div>
                     <div class="match-card spacecat1"></div>
                 </div>
@@ -86,8 +87,18 @@
                 <div class="card-container">
                     <div class="lfz-card"></div>
                     <div class="match-card spacecat9"></div>
-                </div>  
+                </div>   -->
             </container>
-       </main>
+        </main>
+        <!-- Modal Window -->
+        <div class="modal-shadow hidden">
+            <div class="win-modal">
+                <!-- Modal Content -->
+                <div class = "modal-content">
+                    <button id="reset-Btn">Play Again?</button>
+                    <p id="modal-text">Space Catz for the Win!!!</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
