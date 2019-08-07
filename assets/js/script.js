@@ -104,6 +104,7 @@ function winCondition(){
     if(matches === max_matches){
         games_played += 1;
         modal();
+
     }
 }
 function resetStats(){
@@ -119,6 +120,9 @@ function resetStats(){
 
 function modal(){
     const modalShadow = $('.modal-shadow').removeClass('hidden');
+    // setInterval(function(){
+    //     $('#modal-text').css('color',`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`)
+    // }, 2000);
     $('#reset-Btn').on('click', function(){
         modalShadow.addClass('hidden');
         resetStats();
