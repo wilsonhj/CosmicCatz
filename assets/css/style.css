@@ -1,41 +1,51 @@
+html{
+    font-size: 2.5vmin;
+    font-family: 'Barriecito', cursive;
+}
 body{
-    background-color: #FFECCE;
-    /* background-image: url("assets/images/hubble_Wreath.jpg");
-    background-size: contain; */
+    background-image: url("../images/hubble_DeepUV.jpg");
+    background-size: contain;
     color: white;
-
     height: 100vh;
-    width: 100vw;
+    position: relative;
 }
 main {
-    width: 75%;
-    height: 75%;
-    border: 1px solid black;
+    width: 88%;
+    height: 90%;
     display: inline-block;
     vertical-align: top;
-
 }
 header{
     font-size: 4rem;
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    font-weight: bold;
     padding: auto;
-    border: 1px solid black;
-    /* margin: 3%;  */
+    -webkit-text-stroke: 1px black;
+    color: #14C2CC;
 }
+
 .game-area {
     height: 100%;
     width: 100%;
-    display: flex;
+    position: relative; 
 }
 .card-container {
-    display: inline-block;
-    height: 33%;
-    vertical-align: top;
-    width: 16%;
-    margin-top: 10px;
+    height: 33.333%;
+    width: 16.6%;
+    float: left;
     position: relative;
+    transition: all .6s ease;
+    
+    transform: scale(1); 
+    -webkit-transform: scale(1); /* safari transform fix */
+    -ms-transform: scale(1);
+
+}
+.card-container:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2) ;
+    -ms-transform: scale(1.2); 
+    z-index: 100;
+    
 }
 .lfz-card, .match-card {
     left: 2.5%;
@@ -45,40 +55,162 @@ header{
     position: absolute;
 }
 .lfz-card {
-    /* background-color: magenta; */
-    z-index: 100;
+    z-index: 5;
     background-size: cover;
-    background-image: url("../images/lfz-card.jpg");
+    border-width: 5px;
+    border-style: double;
+    background-image:
+    radial-gradient(circle farthest-side at top right, blue, #0D64FF), 
+    radial-gradient(circle farthest-side at bottom left, red, #FF00A0);
+    -webkit-animation: bg-change 20s infinite;
+    animation: bg-change 20s infinite;
     background-position: center;
 }
+
 .match-card {
     background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("../images/scott.jpg");
-    background-position: center;
+    
 }
-.stats{
-    font-size: 2rem;
-    border: 1px solid black;
-    padding: 2px;
 
-    height: 75%;
-    width: 20%;
-    display: inline-block;
+.stats{
+   
+    font-size: 2rem;
+    padding: 2px
+    width: 22.5%;
+    float: left;
+    position: relative;
+    text-align: center;
+    color: #14C2CC;
+    
 }
 .aside-divs{
-    background-color: lightblue;
-    border: 1px solid black;
     margin-top: 5%;
-    /* margin-left: 10px; */
+    margin-left: 10px;
+    text-align: center;
+    height: 100;
+    
+    position: relative;
 }
 
+.spacecat1, .spacecat2, .spacecat3, .spacecat4, .spacecat5, .spacecat6, .spacecat7, .spacecat8, .spacecat9 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.spacecat1{
+    background-image: url('../images/spacecat1.jpg');
+   
+}
+.spacecat2{
+    background-image: url('../images/spacecat2.jpg');
+  
+}
+.spacecat3{
+    background-image: url('../images/spacecat3.jpg');
+    
+}
+.spacecat4{
+    background-image: url('../images/spacecat4.png');
+    
+}
+.spacecat5{
+    background-image: url('../images/spacecat8.jpg')
+}
+.spacecat6{
+    background-image: url('../images/spacecat9.jpg');
+    
+}
+.spacecat7{
+    background-image: url('../images/spacecat10.jpg');
+    
+}.spacecat8{
+    background-image: url('../images/spacecat11.jpg')
+}.spacecat9{
+    background-image: url('../images/spacecat12.jpg');
+    
+}
 
+.win-modal{
+    position: absolute;
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    background-image: url('../images/hubble_Wreath.jpg');
+    background-position: center;
+}
+.modal-shadow{
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.modal-content{
+    text-align: center;
+    text-shadow: 0px -8px 5px black;
+    animation: bg-change 6s infinite;
+    color: #14C2CC;
 
-
-
-
+}
+#reset-Btn{
+    top: 30vh;
+    position: relative;
+}
 
 .hidden {
     display: none;
+}
+.wrong{
+    animation-name: wiggle;
+    animation-duration: .15s;
+    animation-iteration-count: 6;
+}
+
+
+
+@keyframes wiggle{
+    from{
+        transform: rotateZ(-6deg);
+    }
+    to{
+        transform: rotateZ(5deg);
+    }
+}
+
+@keyframes bg-change {
+	0%, 100% {
+		filter:hue-rotate(90deg);
+	}
+	50% {
+		filter:hue-rotate(-360deg);
+	}
+}
+@-webkit-keyframes bg-change{
+    0%, 100% {
+		filter:hue-rotate(45deg);
+	}
+	50% {
+		filter:hue-rotate(-360deg);
+	}
+}
+@media (max-width: 800px) {
+    .stats{
+        float: none;
+        /* width: 100%; */
+    }
+    .aside-divs{
+        display: inline-block;
+        margin-left: 2.5%;
+    }
+    .game-area{
+        position: absolute;
+
+    }
+
 }
